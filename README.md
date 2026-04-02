@@ -1,14 +1,23 @@
-# Anki Import Organisor
+# Anki Import Organisor (Lossless TXT → Anki)
 
-A simple tool to help organize files for importing into Anki.
+This tool converts a `.txt` file into a **strict Anki import file** without changing any content.
 
-## Features
-- User-friendly interface
-- Support for multiple file types
+## Your supported format (configured)
+- **New card starts when** a line starts with `🏥` **OR** a line ends with `?`
+- **Back starts at** the first line that contains `✅ Answer:`
+- **Front** = everything before `✅ Answer:`
+- **Back** = from `✅ Answer:` until the next card start
+- **Lossless**: no trimming, no formatting changes, all characters preserved
 
-## Installation
-1. Download the repository.
-2. Open `index.html` in your web browser.
+## Run
+Just open `index.html` in a browser.
 
-## License
-This project is licensed under the MIT License.
+## Import to Anki
+1. In Anki: **File → Import**
+2. Select the downloaded `anki_import.txt`
+3. The header defines separator + columns automatically
+4. Import
+
+## Notes on escaping
+- Fields containing newlines or quotes are wrapped in quotes
+- `"` inside fields becomes `""` (CSV-style escaping Anki accepts)  
