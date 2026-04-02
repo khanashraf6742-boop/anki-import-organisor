@@ -3,91 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anki Import Organisor</title>
     <link rel="stylesheet" href="style.css">
+    <title>Anki Import Organisor</title>
 </head>
 <body>
-    <header>
-        <h1>📚 Anki Import Organisor</h1>
-        <p>Convert your text files into strict Anki-compatible import files — without changing any content.</p>
-    </header>
-
-    <main>
-        <section class="panel">
-            <h2>1. Settings</h2>
-
-            <div class="form-group">
-                <label for="input-format">Input Format:</label>
-                <select id="input-format">
-                    <option value="tab">Tab-separated (front\tback)</option>
-                    <option value="semicolon">Semicolon-separated (front;back)</option>
-                    <option value="custom">Custom Delimiter</option>
-                    <option value="qa">Q:/A: Block Format</option>
-                    <option value="blank-line">Blank-Line-Separated Pairs</option>
-                </select>
-            </div>
-
-            <div class="form-group" id="custom-delimiter-group" style="display:none;">
-                <label for="custom-delimiter">Custom Delimiter:</label>
-                <input type="text" id="custom-delimiter" placeholder="e.g. :: or --> or ||">
-            </div>
-
-            <div class="form-group">
-                <label for="output-separator">Output Separator (for Anki file):</label>
-                <select id="output-separator">
-                    <option value="tab">Tab (Anki default)</option>
-                    <option value="semicolon">Semicolon</option>
-                    <option value="pipe">Pipe |</option>
-                </select>
-            </div>
-        </section>
-
-        <section class="panel">
-            <h2>2. Upload Your File</h2>
-            <div id="drop-zone" class="drop-zone">
-                <p>📁 Drag &amp; drop your <strong>.txt</strong> file here</p>
-                <p>— or —</p>
-                <input type="file" id="file-input" accept=".txt">
-            </div>
-            <div id="file-info" class="file-info" style="display:none;">
-                <span id="file-name"></span>
-                <span id="file-size"></span>
-            </div>
-        </section>
-
-        <section class="panel" id="convert-section" style="display:none;">
-            <button id="convert-btn" class="btn btn-primary">🔄 Convert</button>
-        </section>
-
-        <section class="panel" id="preview-section" style="display:none;">
-            <h2>3. Preview</h2>
-            <div class="stats">
-                <span id="card-count"></span>
-            </div>
-            <div class="table-wrapper">
-                <table id="preview-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Front</th>
-                            <th>Back</th>
-                        </tr>
-                    </thead>
-                    <tbody id="preview-body"></tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="panel" id="download-section" style="display:none;">
-            <h2>4. Download</h2>
-            <button id="download-btn" class="btn btn-success">⬇️ Download Anki File</button>
-        </section>
-    </main>
-
-    <footer>
-        <p>Made with ❤️ — 100% client-side, your data never leaves your browser.</p>
-    </footer>
-
+    <h1>Welcome to Anki Import Organisor</h1>
     <script src="converter.js"></script>
 </body>
 </html>
