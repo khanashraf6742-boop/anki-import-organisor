@@ -1,13 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Anki Import Organisor</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anki Import Organisor</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to Anki Import Organisor</h1>
-    <script src="converter.js"></script>
+  <main class="container">
+    <header>
+      <h1>Anki Import Organisor</h1>
+      <p class="sub">
+        Upload a <code>.txt</code> file and convert it to a strict Anki import file (lossless).
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>1) Upload TXT</h2>
+      <input id="file" type="file" accept=".txt,text/plain" />
+      <div class="row">
+        <label>
+          Output separator:
+          <select id="outSep">
+            <option value="Tab" selected>Tab</option>
+            <option value="Semicolon">Semicolon</option>
+            <option value="Pipe">Pipe</option>
+          </select>
+        </label>
+
+        <button id="convert" disabled>Convert</button>
+        <button id="download" disabled>Download Anki File</button>
+      </div>
+
+      <p class="hint">
+        Card start: line starts with <code>🏥</code> or ends with <code>?</code>.
+        Back starts at first <code>✅ Answer:</code>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>2) Preview</h2>
+      <div class="meta" id="meta"></div>
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Front (preview)</th><th>Back (preview)</th></tr>
+          </thead>
+          <tbody id="preview"></tbody>
+        </table>
+      </div>
+      <p class="hint">
+        Preview is for display only; the exported file preserves all original characters and line breaks.
+      </p>
+    </section>
+  </main>
+
+  <script src="converter.js"></script>
 </body>
 </html>
